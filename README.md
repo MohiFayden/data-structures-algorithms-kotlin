@@ -1,7 +1,7 @@
 # DSA-Kotlin
 ## Data Structures and Algorithms with Kotlin
 ### Including the Problems from LeetCode
-* NC followed by a number means this is a LeetCode problem
+* LC followed by a number means this is a LeetCode problem
 
 
 ## More information
