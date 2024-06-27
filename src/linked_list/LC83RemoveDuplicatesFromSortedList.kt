@@ -1,4 +1,4 @@
-package linked_list.sigly
+package linked_list
 
 /**
  * 83. Remove Duplicates from Sorted List

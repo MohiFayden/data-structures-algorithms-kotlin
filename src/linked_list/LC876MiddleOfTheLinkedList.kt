@@ -1,4 +1,4 @@
-package linked_list.sigly
+package linked_list
 
 /**
  * 876. Middle of the Linked List

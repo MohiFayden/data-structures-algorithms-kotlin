@@ -1,4 +1,4 @@
-package linked_list.sigly
+package linked_list
 
 /**
  * 24. Swap Nodes in Pairs
