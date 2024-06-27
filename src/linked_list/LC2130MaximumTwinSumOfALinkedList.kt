@@ -63,16 +63,19 @@ class LC2130MaximumTwinSumOfALinkedList {
         var fast = head?.next
 
         // 1->2->3->4->5->6 ==> Goal = max((1+6), (2+5), (3+4))
-        // We can reverse the second half of the list and sum up the nodes starting from the head and half side
-        // 1->2->3->6->5->4 ==> now we can sum up starting from index 0 and list.size / 2
+        // The goal is to find the maximum twin sum of pairs of nodes from the start and end of the list.
+        // To achieve this, reverse the second half of the list and then sum the pairs of nodes
+        // starting from the head of the list and the head of the reversed half.
+        // For example: 1->2->3->4->5->6 becomes 1->2->3->6->5->4 and then sum pairs (1+6), (2+5), (3+4).
 
-        // Find the middle of the linked list (the prev of the second half)
+        // Find the middle of the linked list. 'slow' will point to the last node of the first half when 'fast' reaches the end of the list.
         while (fast?.next != null) {
             slow = slow?.next
             fast = fast.next?.next
         }
 
-        // Reverse the second half
+        // Reverse the second half of the list starting from the node after 'slow'.
+        // 'prev' will be the new head of the reversed half.
         var prev: ListNode? = null
         var curr = slow?.next
 
@@ -83,13 +86,14 @@ class LC2130MaximumTwinSumOfALinkedList {
             curr = next
         }
 
-        // Build the new linked list in place (prev is the head of the reversed half)
+        // Connect the end of the first half to the head of the reversed second half.
         slow?.next = prev
 
-        // Sum up the pairs starting from the head and the half way head (reversed part)
+        // Sum the pairs of nodes from the start of the list and the start of the reversed half,
+        // keeping track of the maximum sum.
         var ans = 0
         var first = head
-        var second = slow?.next // the new head for the second half
+        var second = slow?.next // 'second' points to the start of the reversed half
         while (second != null) {
             ans = max(ans, first!!.`val` + second.`val`)
 
