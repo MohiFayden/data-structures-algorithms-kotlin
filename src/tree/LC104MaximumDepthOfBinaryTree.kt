@@ -69,7 +69,7 @@ class LC104MaximumDepthOfBinaryTree {
         if (root == null) return 0
 
         // Stack to store pairs of tree nodes and their corresponding depth
-        val stack = ArrayDeque<Pair<TreeNode, Int>>()
+        val stack = ArrayDeque<Pair<TreeNode?, Int>>()
         var ans = 0
 
         // Initialize the stack with the root node and its depth (1)
@@ -81,9 +81,9 @@ class LC104MaximumDepthOfBinaryTree {
             val (node, depth) = stack.removeLast()
 
             // If the node has a left child, push it to the stack with depth +1
-            if (node.left != null) stack.addLast(node.left to depth + 1)
+            if (node?.left != null) stack.addLast(node.left to depth + 1)
             // If the node has a right child, push it to the stack with depth +1
-            if (node.right != null) stack.addLast(node.right to depth + 1)
+            if (node?.right != null) stack.addLast(node.right to depth + 1)
 
             // Update the maximum depth found so far
             ans = max(ans, depth)
