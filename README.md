@@ -3,7 +3,7 @@
 ### Including the Problems from LeetCode
 * LC followed by a number means this is a LeetCode problem
 
-### Solve 100 problems from LeetCode
+### Solve 110 problems from LeetCode
 
 ## More information
 Mohammad Feyzian profile on LeetCode:
