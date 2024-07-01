@@ -37,7 +37,7 @@ package tree
  *     var right: TreeNode? = null
  * }
  */
-class Lc101SymmetricTree {
+class LC101SymmetricTree {
     fun isSymmetric(root: TreeNode?): Boolean {
 
         // Intuition:
